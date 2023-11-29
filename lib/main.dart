@@ -1,7 +1,6 @@
-import 'dart:ffi';
 
-import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,8 +25,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final player = AudioPlayer();
-  final List<String> listCuvinte = [
+  final AudioPlayer player = AudioPlayer();
+  final List<String> listCuvinte = <String>[
     'salut',
     'ma numesc',
     'cum esti?',
@@ -40,7 +39,7 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           centerTitle: true,
           backgroundColor: Colors.blue,
-          title: const Text("Basic Phrases"),
+          title: const Text('Basic Phrases'),
           titleTextStyle: const TextStyle(
             color: Colors.white,
             fontSize: 24,
@@ -56,14 +55,14 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.all(5),
                 child: GestureDetector(
                   onTap: () {
-                    player.seek(const Duration(milliseconds: 0));
+                    player.seek(Duration.zero);
                     player.play(AssetSource('0${index + 1}.mp3'));
                   },
                   child: Expanded(
                     child: Container(
                       decoration: const BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(20)),
-                          gradient: LinearGradient(colors: [
+                          gradient: LinearGradient(colors: <Color>[
                             Colors.blue,
                             Colors.blueAccent,
                             Colors.lightBlue,
@@ -74,8 +73,8 @@ class _HomePageState extends State<HomePage> {
                         child: Center(
                           child: Text(
                               index.isEven
-                                  ? listCuvinte.elementAt(((index / 2)).floor())
-                                  : '${listCuvinte.elementAt(((index / 2)).floor())} (Germana)',
+                                  ? listCuvinte.elementAt((index / 2).floor())
+                                  : '${listCuvinte.elementAt((index / 2).floor())} (Germana)',
                               style: const TextStyle(
                                   fontSize: 20, color: Colors.black),
                               textAlign: TextAlign.center),
