@@ -1,4 +1,3 @@
-
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
@@ -26,12 +25,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final AudioPlayer player = AudioPlayer();
-  final List<String> listCuvinte = <String>[
-    'salut',
-    'ma numesc',
-    'cum esti?',
-    'sunt bine'
-  ];
+  final List<String> listCuvinte = <String>['salut', 'ma numesc', 'cum esti?', 'sunt bine'];
 
   @override
   Widget build(BuildContext context) {
@@ -47,8 +41,7 @@ class _HomePageState extends State<HomePage> {
         ),
         body: GridView.builder(
             padding: const EdgeInsets.all(5),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
             itemCount: 8,
             itemBuilder: (BuildContext context, int index) {
               return Padding(
@@ -75,8 +68,7 @@ class _HomePageState extends State<HomePage> {
                               index.isEven
                                   ? listCuvinte.elementAt((index / 2).floor())
                                   : '${listCuvinte.elementAt((index / 2).floor())} (Germana)',
-                              style: const TextStyle(
-                                  fontSize: 20, color: Colors.black),
+                              style: const TextStyle(fontSize: 20, color: Colors.black),
                               textAlign: TextAlign.center),
                         ),
                       ),
