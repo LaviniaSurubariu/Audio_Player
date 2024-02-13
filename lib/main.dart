@@ -51,26 +51,24 @@ class _HomePageState extends State<HomePage> {
                 player.seek(Duration.zero);
                 player.play(AssetSource('0${index + 1}.mp3'));
               },
-              child: Expanded(
-                child: Container(
-                  decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
-                      gradient: LinearGradient(colors: <Color>[
-                        Colors.blue,
-                        Colors.blueAccent,
-                        Colors.lightBlue,
-                        Colors.lightBlueAccent,
-                      ])),
-                  child: SizedBox(
-                    height: 300,
-                    child: Center(
-                      child: Text(
-                          index.isEven
-                              ? words.elementAt((index / 2).floor())
-                              : '${words.elementAt((index / 2).floor())} (Germana)',
-                          style: const TextStyle(fontSize: 20, color: Colors.black),
-                          textAlign: TextAlign.center),
-                    ),
+              child: Container(
+                decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                    gradient: LinearGradient(colors: <Color>[
+                      Colors.blue,
+                      Colors.blueAccent,
+                      Colors.lightBlue,
+                      Colors.lightBlueAccent,
+                    ])),
+                child: SizedBox(
+                  height: 300,
+                  child: Center(
+                    child: Text(
+                        index.isEven
+                            ? words.elementAt((index / 2).floor())
+                            : '${words.elementAt((index / 2).floor())} (Germana)',
+                        style: const TextStyle(fontSize: 20, color: Colors.black),
+                        textAlign: TextAlign.center),
                   ),
                 ),
               ),
